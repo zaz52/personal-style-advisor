@@ -123,6 +123,8 @@ When the overview layout is approved, the next step is not another overview. Gen
 
 Important sequencing rule: the overview image is only the cover/summary. The detail images must be generated separately, one prompt per image, using the detailed report layout for that module. Do not assume the overview replaces the detail images.
 
+Strict template rule: detail images must be generated from the corresponding `references/*.md` prompt, not from a short summary prompt. Preserve the original template's required layout sections, including Before/After placement, Best Options, Worth Trying, Less Flattering/Avoid, bottom guide, diagnosis modules, and disclaimer text. Only adapt identity anchors, gender expression, style direction, and colors to the uploaded photo.
+
 ### What To Produce
 
 Generate or prepare prompts for a complete personal style suite:
