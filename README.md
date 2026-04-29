@@ -57,6 +57,12 @@ personal-style-advisor/
 
 ## Quick Start Prompts
 
+### Single-Image Five-In-One Overview
+
+```text
+使用 personal-style-advisor。我会上传一张照片。请使用强参考本人模式，把眼镜、发型、衣品、色彩、五官氛围这五个模块放在同一张横向总览图里。要求像本人，不要分成多张，不要换脸。
+```
+
 ### Auto Full Style Suite
 
 ```text

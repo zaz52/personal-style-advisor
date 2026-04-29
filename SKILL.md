@@ -70,6 +70,42 @@ Identity preservation requirements:
 
 Use this workflow when the user uploads one photo and wants everything generated automatically, such as `自动匹配风格`, `所有报告都做`, `把所有照片都弄成`, `一张照片生成全套`, or `全案`.
 
+### Two Generation Modes
+
+Choose the mode from the user's intent:
+
+1. `单图五合一总览图` — one horizontal overview image containing five modules on the same canvas: eyewear, hairstyle, outfit, color palette, and facial/makeup detail guide. Use this when the user wants everything in one image or complains that modules are separate.
+2. `强参考本人模式` — direct image generation with the uploaded photo passed as `reference_image` when the image tool supports it. Use this whenever likeness matters. If the tool surface does not expose `reference_image`, state the limitation and avoid promising exact likeness.
+
+For direct generation with a reference photo, call:
+
+```text
+image_generate(prompt=<adapted prompt>, aspect_ratio="landscape", reference_image=<uploaded image path>)
+```
+
+The prompt must still describe identity anchors in text, but the reference image is the primary likeness source.
+
+### Single-Image Five-In-One Overview
+
+Use this prompt shape for a one-image overview:
+
+```text
+Create one single horizontal premium Xiaohongshu-style composite visual board titled "AI 个人风格五合一适配报告". All five panels must appear on the same image, not separate images.
+
+Use the uploaded reference photo as the primary identity source. Keep the same person in every panel: same face shape, same eyes, same bangs/hairline, same skin tone, same expression temperament, and same recognizable features. Do not create a generic influencer face.
+
+Five panels on one canvas:
+1. 眼镜适配: best daily glasses direction.
+2. 发型升级: realistic hairstyle optimization.
+3. 衣品升级: outfit/style upgrade direction.
+4. 色彩诊断: palette swatches and avoid colors.
+5. 五官氛围: subtle makeup/detail guide, not surgery.
+
+Use clean cream background, soft accent colors, short readable Chinese labels, and elegant spacing. Avoid overcrowding, face replacement, plastic skin, aggressive slimming, medical claims, and excessive beautification.
+```
+
+This mode is a compact overview. For professional detail, generate the full suite as separate report images after the user approves the overview.
+
 ### What To Produce
 
 Generate or prepare prompts for a complete personal style suite:
