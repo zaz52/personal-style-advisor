@@ -12,6 +12,7 @@ This skill is designed for AI-assisted personal styling, eyewear matching, beaut
 - **个人色彩诊断三连图** — personal color diagnosis, color draping, outfit application, makeup, hair, and detail guide.
 - **AI 发型美学升级报告** — hairstyle upgrade report with best cuts and avoid examples.
 - **AI 五官美学升级报告** — natural facial aesthetic proposal board with cautious, non-medical guidance.
+- **Auto Personal Style Suite** — upload one photo and automatically create a matched full styling plan across eyewear, outfits, colors, hairstyle, and facial aesthetics.
 
 ## Install In Hermes
 
@@ -39,10 +40,12 @@ personal-style-advisor/
   LICENSE
   CONTRIBUTING.md
   examples/
+    auto-full-style-suite-example.md
     eyewear-report-example.md
     outfit-upgrade-example.md
     personal-color-diagnosis-example.md
     hairstyle-upgrade-example.md
+    facial-aesthetic-example.md
   references/
     eyewear-report.md
     seasonal-korean-streetwear.md
@@ -53,6 +56,16 @@ personal-style-advisor/
 ```
 
 ## Quick Start Prompts
+
+### Auto Full Style Suite
+
+```text
+使用 personal-style-advisor。我会上传一张清晰正面或全身照片。请自动识别我的脸型、五官量感、肤色倾向、身材比例、气质方向和当前穿搭基础，然后自动匹配完整个人风格全案。
+
+请一次性规划：AI 眼镜风格适配报告、AI 衣品升级改造报告、四季韩系潮牌穿搭指南、个人色彩诊断三连图、AI 发型美学升级报告、AI 五官美学升级报告。
+
+所有报告都基于同一张照片，保持同一个人，不换脸，不变成模板网红脸。如果直接生成图片，请按批次生成，合计约 11 张，不要塞进一张大拼图。
+```
 
 ### Eyewear Report
 
@@ -81,9 +94,10 @@ personal-style-advisor/
 ## How To Use With Image Generation
 
 1. Upload a clear portrait or full-body photo.
-2. Tell Hermes which report type you want.
+2. Tell Hermes whether you want one report type or the Auto Full Style Suite.
 3. Add preferences such as gender expression, style direction, occasion, budget, or avoid list.
 4. Ask Hermes to generate the image directly or first produce the image-generation prompt.
+5. For the full suite, generate in batches: eyewear + hairstyle first, then outfit, color pages, seasonal outfits, and facial aesthetics.
 
 Recommended wording:
 

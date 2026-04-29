@@ -53,16 +53,77 @@ Identity preservation requirements:
 1. Identify the report type from the user's request.
 2. If the user uploaded an image, treat it as Image A and the primary identity reference.
 3. If the user did not upload an image, ask for a portrait/body photo unless they only want a generic reusable prompt.
-4. Select the closest reference template from `references/`.
-5. Adapt the template to the user's gender expression, age impression, body type, lifestyle, scene, and style preference.
-6. Keep the final prompt specific, structured, and image-model friendly.
-7. If generating an image, request the proper aspect ratio:
+4. If the user asks for automatic matching, full suite, all photos, all reports, or `自动匹配风格`, run the Auto Full Style Suite workflow instead of choosing only one template.
+5. Select the closest reference template from `references/`.
+6. Adapt the template to the user's gender expression, age impression, body type, lifestyle, scene, and style preference.
+7. Keep the final prompt specific, structured, and image-model friendly.
+8. If generating an image, request the proper aspect ratio:
    - Eyewear report: horizontal 4:3.
    - Outfit upgrade report: horizontal 4:3.
    - Hairstyle report: horizontal 4:3.
    - Facial aesthetic report: horizontal 4:3.
    - Seasonal Korean streetwear: four separate vertical 3:4 images.
    - Personal color diagnosis: three separate vertical 3:4 images.
+   - Auto Full Style Suite: multiple separate outputs, never one overcrowded mega-collage.
+
+## Auto Full Style Suite
+
+Use this workflow when the user uploads one photo and wants everything generated automatically, such as `自动匹配风格`, `所有报告都做`, `把所有照片都弄成`, `一张照片生成全套`, or `全案`.
+
+### What To Produce
+
+Generate or prepare prompts for a complete personal style suite:
+
+1. `AI 眼镜风格适配报告` — one horizontal 4:3 image.
+2. `AI 衣品升级改造报告` — one horizontal 4:3 image.
+3. `四季韩系潮牌穿搭指南` — four vertical 3:4 images.
+4. `个人色彩诊断三连图` — three vertical 3:4 images.
+5. `AI 发型美学升级报告` — one horizontal 4:3 image.
+6. `AI 五官美学升级报告` — one horizontal 4:3 image.
+
+This means a complete suite can contain 11 separate images. Do not compress all modules into one image. If direct generation would be too large, produce it in batches and ask which batch to run first.
+
+### Automatic Style Matching Pass
+
+Before generating individual report prompts, analyze the uploaded photo once and create a shared style profile:
+
+```text
+Identity anchors: face recognizability, age impression, face shape, body proportion, original temperament
+Face features: face shape, feature weight, brow-eye presence, nose bridge, jaw/contour, lip/mouth area
+Color profile: likely undertone, contrast level, brightness, saturation tolerance, hair/eye/lip color cues
+Body/styling profile: height impression, shoulder/waist/leg proportion, current outfit baseline, proportion goals
+Style axis: clean / street / soft / sharp / mature / youthful / minimal / vintage / sporty / elegant
+Avoid boundaries: what not to change, what not to exaggerate, what would look less flattering
+```
+
+Carry this shared profile into every report so the glasses, outfits, colors, hair, makeup, and facial aesthetic direction feel consistent.
+
+### Batch Order
+
+Recommended order for direct image generation:
+
+1. Start with `眼镜风格适配报告` and `发型美学升级报告` because they preserve clothing and are easy to verify identity.
+2. Generate `衣品升级改造报告`.
+3. Generate `个人色彩诊断三连图`.
+4. Generate `四季韩系潮牌穿搭指南`.
+5. Generate `五官美学升级报告` last because it is the most sensitive and must stay subtle.
+
+### Auto Suite Output Plan
+
+When the user asks for the full suite but has not explicitly requested immediate image generation, first output this plan:
+
+```text
+我会基于同一张照片生成完整个人风格全案：
+1. 眼镜报告 1 张，横向 4:3
+2. 衣品升级 1 张，横向 4:3
+3. 四季穿搭 4 张，竖向 3:4
+4. 色彩诊断 3 张，竖向 3:4
+5. 发型报告 1 张，横向 4:3
+6. 五官美学 1 张，横向 4:3
+合计 11 张图，建议分批生成。
+```
+
+Then proceed with the first batch if the user asked to generate directly; otherwise provide the grouped prompts.
 
 ## Report Types
 
