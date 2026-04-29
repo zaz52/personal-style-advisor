@@ -57,10 +57,14 @@ personal-style-advisor/
 
 ## Quick Start Prompts
 
-### Single-Image Five-In-One Overview
+### Single-Image Master-And-Modules Overview
 
 ```text
-使用 personal-style-advisor。我会上传一张照片。请使用强参考本人模式，把眼镜、发型、衣品、色彩、五官氛围这五个模块放在同一张横向总览图里。要求像本人，不要分成多张，不要换脸。
+使用 personal-style-advisor。我会上传一张照片。请使用强参考本人模式，生成一张横向「AI 个人风格五合一适配报告」。
+
+布局必须是：一张大主图作为整体风格定调，占画面 40-50%；旁边和下方放五个详情模块：眼镜适配、发型升级、衣品升级、色彩诊断、五官氛围。
+
+不要做成五个等宽平铺栏目。每个模块要像 skill 里的报告缩略版：有小标题、适合/可尝试/不建议、色卡或单品拆解等细节。要求像本人，不要换脸。
 ```
 
 ### Auto Full Style Suite

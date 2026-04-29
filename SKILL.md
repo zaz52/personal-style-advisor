@@ -85,23 +85,28 @@ image_generate(prompt=<adapted prompt>, aspect_ratio="landscape", reference_imag
 
 The prompt must still describe identity anchors in text, but the reference image is the primary likeness source.
 
-### Single-Image Five-In-One Overview
+### Single-Image Master-And-Modules Overview
 
-Use this prompt shape for a one-image overview:
+Use this prompt shape for a one-image overview. This is not a flat five-column grid. It must look like a professional style proposal board with one main portrait and five detail modules derived from the skill's report layouts:
 
 ```text
-Create one single horizontal premium Xiaohongshu-style composite visual board titled "AI 个人风格五合一适配报告". All five panels must appear on the same image, not separate images.
+Create one single horizontal premium Xiaohongshu-style composite report board titled "AI 个人风格五合一适配报告".
 
-Use the uploaded reference photo as the primary identity source. Keep the same person in every panel: same face shape, same eyes, same bangs/hairline, same skin tone, same expression temperament, and same recognizable features. Do not create a generic influencer face.
+Layout rule: one large main portrait is the visual anchor, with five smaller detail modules around it. Do not make five equal flat columns. Do not make five unrelated portraits.
 
-Five panels on one canvas:
-1. 眼镜适配: best daily glasses direction.
-2. 发型升级: realistic hairstyle optimization.
-3. 衣品升级: outfit/style upgrade direction.
-4. 色彩诊断: palette swatches and avoid colors.
-5. 五官氛围: subtle makeup/detail guide, not surgery.
+Use the uploaded reference photo as the primary identity source. Keep the same person in every portrait/detail: same face shape, same eyes, same bangs/hairline, same skin tone, same expression temperament, and same recognizable features. Do not create a generic influencer face.
 
-Use clean cream background, soft accent colors, short readable Chinese labels, and elegant spacing. Avoid overcrowding, face replacement, plastic skin, aggressive slimming, medical claims, and excessive beautification.
+Canvas structure:
+- Center or left-center: large main hero portrait, 40-50% of the canvas. This is the overall recommended style look, preserving the person's identity and showing the integrated style direction.
+- Module 1 眼镜适配: mini before/after glasses card with suitable / try / avoid frame labels.
+- Module 2 发型升级: mini hair card with current hair, recommended airy bangs / side layers, and avoid notes.
+- Module 3 衣品升级: mini outfit card with style tags, item breakdown, and proportion improvement cues.
+- Module 4 色彩诊断: mini palette card with best colors, try colors, avoid colors, and makeup/hair color cues.
+- Module 5 五官氛围: mini detail card with brows, eyes, lips, skin texture, and natural makeup direction; no surgery.
+
+Each module represents one report section from this skill. Use short readable Chinese labels, small icons/swatches/arrows, elegant spacing, and clear hierarchy. The main image should dominate; the five modules should support it like details in a style proposal board.
+
+Visual style: clean cream background, soft accent colors, magazine layout, premium personal consulting board, not a dense PPT table. Avoid overcrowding, face replacement, plastic skin, aggressive slimming, medical claims, excessive beautification, and unreadable long paragraphs.
 ```
 
 This mode is a compact overview. For professional detail, generate the full suite as separate report images after the user approves the overview.
