@@ -4,6 +4,55 @@ AI穿搭-衣品升级改造报告提示词
 请基于用户上传的形象照片，生成一张横向 4:3 的高完成度「AI 衣品升级改造报告 / Before & After Style Upgrade Report」。
 如果有参考图像，Image A 是用户上传的本人形象照片，是本次生成的核心人物参考。请保留用户本人的基础身份特征、脸部辨识度、五官特征、年龄感、发型特征、身材比例和整体气质，让人一眼能认出这是同一个人；但在不改变“这个人是谁”的前提下，对整体穿搭、气质、比例、层次、配饰和上镜状态进行明显升级。
 本次生成不是普通换装图，不是简单穿搭建议，也不是基础电商搭配图，而是一张「高设计感、高反差、高信息量」的个人潮流形象重塑提案板。画面第一眼要让人感受到：改造前后差异明显，改造后更帅、更潮、更有型、更会穿；第二眼要让人感受到：这是一份专业、精致、逻辑清晰、细节丰富的风格升级报告。
+
+【五官气质 × 应用场景 × 风格自动匹配】
+请先根据上传人物的五官、脸型、五官量感、眉眼气质、鼻唇轮廓、面部锐钝感、骨相/肉感比例、年龄感、发型、身材比例、原始气质和照片场景，自动判断最适合的穿搭风格组合。不是固定套用某一种风格，而是从多个风格中选择 1 个主风格 + 2 到 3 个辅助风格，并解释为什么适合这个人。
+
+必须加入“应用场景”模块，让穿搭不是抽象好看，而是能落地到真实生活。请根据人物气质自动匹配 3 到 5 个适合场景，例如：日常出街、约会拍照、通勤上班、朋友聚会、校园/学习、轻正式见人、旅行度假、咖啡店/展览、夜晚社交、城市街拍等。每个 Look 需要对应明确场景，不要所有 Look 都是同一类场景。
+
+可匹配的风格库包括但不限于：
+- 甜美系 / Sweet
+- 公主系 / Princess
+- 温柔系 / Soft Feminine
+- 少女系 / Girlish
+- 韩系 / Korean Chic
+- 法式 / French Chic
+- 日杂系 / Japanese Casual Elegant
+- 轻熟系 / Light Mature
+- 通勤系 / Office Chic
+- 职业系 / Professional
+- 知性系 / Intellectual
+- 极简系 / Minimalist
+- 高级简约系 / Quiet Luxury
+- 复古系 / Vintage
+- 港风系 / Hong Kong Retro
+- 朋克系 / Punk
+- 街头系 / Street Style
+- 机能系 / Functional Utility
+- 酷飒系 / Cool Edgy
+- 中性系 / Androgynous
+- 文艺系 / Artistic
+- 森系 / Natural Soft
+- 慵懒系 / Relaxed Effortless
+- 轻奢系 / Modern Luxury
+- 优雅名媛系 / Elegant Lady
+- 度假系 / Resort Style
+- 美式休闲系 / American Casual
+- Old Money
+- Y2K
+- Clean Fit
+- Athflow / 运动休闲风
+- 新中式 / New Chinese Style
+
+自动匹配原则：
+1. 五官偏圆润、幼态、甜感强：可优先考虑 Sweet、Girlish、Korean Chic、Japanese Casual Elegant、Soft Feminine，但要避免廉价甜美和幼稚堆叠。
+2. 五官精致、骨相清晰、气质安静：可考虑 French Chic、Quiet Luxury、Light Mature、Intellectual、Old Money、Minimalist。
+3. 眉眼存在感强、轮廓更锐利：可考虑 Cool Edgy、Street Style、Punk、Hong Kong Retro、Androgynous、Y2K。
+4. 身材比例需要拉长时：优先选择 Clean Fit、短上衣、高腰线、直筒/微阔裤、短裙长靴、露腰线或外短内长结构。
+5. 气质柔和、自然、低攻击性：可考虑 Natural Soft、Artistic、Relaxed Effortless、Soft Feminine、Resort Style。
+6. 职场或轻正式需求明显：可考虑 Office Chic、Professional、Intellectual、Quiet Luxury，但必须年轻化、时髦化，避免销售感和老气正装。
+7. 不要把所有风格硬塞进一张图。只展示最适合人物的主风格、辅助风格、场景 Look 和少量“不推荐风格边界”。
+
 【核心审美方向】
 整体风格请明确偏向：
 韩系轻潮、Clean Fit、City Boy、Urban Casual、日系简约街头、港风松弛有型、主流潮牌感、清爽高级、日常可穿、上镜好看。
@@ -50,13 +99,29 @@ After 不要生成成传统商务风，不要过于保守，不要像普通通�
 【内容模块】
 请在画面中组织以下模块，但主次要清楚，不能喧宾夺主。
 1. 风格主题 / Style Direction
-请自动根据用户照片判断最适合的升级方向，并给出一个清晰主题，例如：
-- 韩系轻潮焕新 / Korean Clean Street Reset
-- 清爽轻潮重塑 / Clean Urban Upgrade
-- 都市潮流重塑 / Urban Trend Reset
-- 日系简约街头 / Minimal City Boy Style
-- 港风松弛有型 / Relaxed Hong Kong Cool
+请自动根据用户照片判断最适合的升级方向，并给出一个清晰主题。主题必须来自“主风格 + 辅助风格 + 应用场景”的综合判断，而不是只套用韩系轻潮。画面中建议展示：
+- 主风格 / Main Style：从风格库中选择 1 个最适合人物五官气质的方向
+- 辅助风格 / Support Styles：选择 2 到 3 个可融合方向
+- 应用场景 / Best Scenes：匹配 3 到 5 个真实场景
+- 不推荐风格边界 / Avoid Style Boundary：列出 2 到 3 个不适合硬套的风格
+例如：
+- 韩系甜酷日常 / Korean Sweet Cool Daily
+- 法式轻熟约会 / French Light Mature Date Look
+- 日杂通勤松弛感 / Japanese Casual Office Chic
+- 高级简约出街 / Quiet Luxury Clean Street
+- 港风复古酷飒 / Hong Kong Retro Cool Edgy
 主题说明要简洁、有风格判断，不要空泛。
+
+1.5 应用场景 / Scene Matching
+请把推荐 Look 明确落到真实场景中。每个场景要对应不同造型目标，例如：
+- 日常出街：舒适、有比例、有记忆点
+- 约会拍照：更显精致、更有氛围感
+- 通勤上班：得体但不老气，有年轻时髦感
+- 朋友聚会：更有个性和辨识度
+- 旅行度假：轻松、上镜、方便活动
+- 展览咖啡：文艺、松弛、有层次
+- 夜晚社交：更酷、更有存在感
+场景数量控制在 3 到 5 个，选择最适合人物的即可，不要机械全部列出。
 2. 核心变化点 / Key Upgrades
 用 5—6 个短标签展示改造亮点，例如：
 - 轮廓更利落
@@ -91,14 +156,14 @@ After 不要生成成传统商务风，不要过于保守，不要像普通通�
 - 裤型垂顺，拉长腿部线条
 - 鞋裤关系更干净，整体更上镜
 6. 推荐 Look / Outfit Ideas
-生成 3 套围绕改造后风格展开的完整穿搭 Look，作为小缩略图展示：
-Look 01：日常通勤
-干净利落、轻潮实穿，适合日常工作和见人。
-Look 02：周末出街
-更松弛、更街头、更有 City Boy 感，适合城市漫步、朋友聚会。
-Look 03：约会漫步
-更精致、更有氛围感，适合约会、拍照、轻社交场景。
-每套 Look 都要比原始穿搭更潮、更完整、更有设计感。
+生成 3 套围绕改造后主风格展开的完整穿搭 Look，作为小缩略图展示。每套 Look 都必须标注对应应用场景，并且场景之间要拉开差异：
+Look 01：根据人物最适合的日常高频场景生成，例如日常出街 / 校园学习 / 城市通勤
+干净利落、比例更好、真实可穿，是最容易落地的主推 Look。
+Look 02：根据人物气质生成更有氛围的场景，例如约会拍照 / 展览咖啡 / 朋友聚会
+更有风格记忆点，体现辅助风格方向和细节完成度。
+Look 03：根据人物可拓展边界生成更进阶的场景，例如夜晚社交 / 旅行度假 / 轻正式见人
+更有辨识度、更上镜，但仍保持真实可穿。
+每套 Look 都要比原始穿搭更潮、更完整、更有设计感，并且分别体现不同场景、不同风格侧重、不同廓形和配饰逻辑。
 7. 关键单品升级 / Key Pieces
 展示 5—6 个最能带来改造感的单品，例如：
 - 短款夹克
