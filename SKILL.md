@@ -1,6 +1,6 @@
 ---
-name: personal-image-style-advisor
-description: Use when generating personal image consulting reports from user photos or style goals, including eyewear matching, Korean streetwear seasonal looks, outfit upgrades, personal color diagnosis, hairstyle upgrades, makeup/detail guidance, and facial aesthetic proposal boards.
+name: personal-style-advisor
+description: Use when generating personal style consulting reports from user photos or style goals, including eyewear matching, Korean streetwear seasonal looks, outfit upgrades, personal color diagnosis, hairstyle upgrades, makeup/detail guidance, and facial aesthetic proposal boards.
 version: 1.0.0
 author: 唯一 + Hermes Agent
 license: MIT
@@ -10,11 +10,11 @@ metadata:
     related_skills: [popular-web-designs]
 ---
 
-# Personal Image Style Advisor
+# Personal Style Advisor
 
 ## Overview
 
-This skill turns a user's portrait, body photo, or style request into a high-completion personal image consulting output. It is optimized for image-generation prompts and visual reports in the style of premium proposal boards, fashion magazine layouts, Xiaohongshu-friendly guides, and before/after transformation reports.
+This skill turns a user's portrait, body photo, or style request into a high-completion personal style consulting output. It is optimized for image-generation prompts and visual reports in the style of premium proposal boards, fashion magazine layouts, Xiaohongshu-friendly guides, and before/after transformation reports.
 
 Use it as a prompt framework library. The main job is to choose the right report type, preserve the user's identity, adapt the language to the user's goal, and produce a clean prompt or report structure that an image-generation model can follow.
 

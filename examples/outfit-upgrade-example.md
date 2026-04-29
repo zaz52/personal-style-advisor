@@ -1,7 +1,7 @@
 # Outfit Upgrade Example
 
 ```text
-使用 personal-image-style-advisor。
+使用 personal-style-advisor。
 请基于我上传的全身照片，生成一张横向 4:3 的「AI 衣品升级改造报告 / Before & After Style Upgrade Report」。
 
 风格方向：韩系轻潮、Clean Fit、City Boy、Urban Casual、日系简约街头，日常可穿但更帅、更潮、更上镜。

@@ -1,7 +1,7 @@
 # Personal Color Diagnosis Example
 
 ```text
-使用 personal-image-style-advisor。
+使用 personal-style-advisor。
 请基于我上传的人像照片，生成一套「个人色彩诊断三连图 / Personal Color Diagnosis Series」。
 
 请生成 3 张独立竖版 3:4 成品图：

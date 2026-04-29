@@ -1,8 +1,8 @@
-# Personal Image Style Advisor
+# Personal Style Advisor
 
-A reusable Hermes Agent skill for creating high-completion personal image consulting prompts and visual report workflows.
+A reusable Hermes Agent skill for creating high-completion personal style consulting prompts and visual report workflows.
 
-This skill is designed for AI-assisted personal styling, eyewear matching, beauty guidance, hairstyle upgrades, color diagnosis, and before/after image proposal boards. It is especially suitable for Xiaohongshu-style visual reports, fashion magazine layouts, and professional-looking personal image consulting cards.
+This skill is designed for AI-assisted personal styling, eyewear matching, beauty guidance, hairstyle upgrades, color diagnosis, and before/after image proposal boards. It is especially suitable for Xiaohongshu-style visual reports, fashion magazine layouts, and professional-looking personal style consulting cards.
 
 ## What It Can Generate
 
@@ -19,13 +19,13 @@ Clone this repository or download it, then copy the folder into your local Herme
 
 ```bash
 mkdir -p ~/.hermes/skills/creative
-cp -r personal-image-style-advisor ~/.hermes/skills/creative/
+cp -r personal-style-advisor ~/.hermes/skills/creative/
 ```
 
 Restart Hermes or start a new session, then ask Hermes to use the skill:
 
 ```text
-使用 personal-image-style-advisor，根据我的照片做一张 AI 眼镜风格适配报告。
+使用 personal-style-advisor，根据我的照片做一张 AI 眼镜风格适配报告。
 ```
 
 > Note: Hermes skill loading is session-based. If the skill does not appear immediately, start a new Hermes session.
@@ -33,7 +33,7 @@ Restart Hermes or start a new session, then ask Hermes to use the skill:
 ## Repository Structure
 
 ```text
-personal-image-style-advisor/
+personal-style-advisor/
   SKILL.md
   README.md
   LICENSE
@@ -57,25 +57,25 @@ personal-image-style-advisor/
 ### Eyewear Report
 
 ```text
-使用 personal-image-style-advisor。请基于我上传的正面照片，生成一张横向 4:3 的 AI 眼镜风格适配报告。要求保留我的脸部辨识度，只改变眼镜，输出适合 / 可尝试 / 不推荐的镜框方案。
+使用 personal-style-advisor。请基于我上传的正面照片，生成一张横向 4:3 的 AI 眼镜风格适配报告。要求保留我的脸部辨识度，只改变眼镜，输出适合 / 可尝试 / 不推荐的镜框方案。
 ```
 
 ### Outfit Upgrade
 
 ```text
-使用 personal-image-style-advisor。请基于我上传的全身照片，生成一张横向 4:3 的 AI 衣品升级改造报告。风格偏韩系轻潮、Clean Fit、City Boy，要求 Before / After 对比明显，但仍然像同一个人。
+使用 personal-style-advisor。请基于我上传的全身照片，生成一张横向 4:3 的 AI 衣品升级改造报告。风格偏韩系轻潮、Clean Fit、City Boy，要求 Before / After 对比明显，但仍然像同一个人。
 ```
 
 ### Personal Color Diagnosis
 
 ```text
-使用 personal-image-style-advisor。请基于我上传的人像照片，生成个人色彩诊断三连图：总诊断页、色彩上身与穿搭应用页、妆容发色细节页。不要预设季型，请根据照片自动判断。
+使用 personal-style-advisor。请基于我上传的人像照片，生成个人色彩诊断三连图：总诊断页、色彩上身与穿搭应用页、妆容发色细节页。不要预设季型，请根据照片自动判断。
 ```
 
 ### Hairstyle Upgrade
 
 ```text
-使用 personal-image-style-advisor。请基于我上传的正面照片，生成一张横向 4:3 的 AI 发型美学升级报告。只改变发型，不改变五官、穿搭和妆容。
+使用 personal-style-advisor。请基于我上传的正面照片，生成一张横向 4:3 的 AI 发型美学升级报告。只改变发型，不改变五官、穿搭和妆容。
 ```
 
 ## How To Use With Image Generation

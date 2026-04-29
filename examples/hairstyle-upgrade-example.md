@@ -1,7 +1,7 @@
 # Hairstyle Upgrade Example
 
 ```text
-使用 personal-image-style-advisor。
+使用 personal-style-advisor。
 请基于我上传的正面照片，生成一张横向 4:3 的「AI 发型美学升级报告 / Before & After Hairstyle Upgrade Report」。
 
 要求：

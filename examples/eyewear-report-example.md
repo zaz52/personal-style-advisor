@@ -1,7 +1,7 @@
 # Eyewear Report Example
 
 ```text
-使用 personal-image-style-advisor。
+使用 personal-style-advisor。
 请基于我上传的正面照片，生成一张横向 4:3 的「AI 眼镜风格适配报告 / Before & After Glasses Style Matching Report」。
 
 要求：

@@ -1,7 +1,7 @@
 # Facial Aesthetic Report Example
 
 ```text
-使用 personal-image-style-advisor。
+使用 personal-style-advisor。
 请基于我上传的正面照片，生成一张横向 4:3 的「AI 五官美学升级报告 / Before & After Facial Aesthetic Upgrade Report」。
 
 要求：
