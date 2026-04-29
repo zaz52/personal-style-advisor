@@ -41,6 +41,34 @@ Do not use this skill for:
 
 Always preserve the user's identity. The output may improve styling, colors, hair, glasses, layout, and presentation, but it must not change who the person is.
 
+## User-Specific Generation Preferences
+
+These preferences override the default visual wording in all report templates unless the user explicitly asks otherwise.
+
+### No Top Title By Default
+
+When generating finished images, do not place a large title/header banner at the top of the image by default. The generated picture should look clean and visually pleasing first, not like a poster with a mandatory headline.
+
+- Omit top titles such as `AI 眼镜风格适配报告`, `AI 发型美学升级报告`, `个人色彩诊断总览`, or similar unless the user explicitly requests a title.
+- Small section labels, subtle module tags, icons, swatches, arrows, and short readable annotations are allowed.
+- If a title is required by the user, keep it small, integrated into the layout, and not visually dominant.
+- For image-generation prompts, replace wording like `titled "..."` with `no large title, no top headline; use subtle section labels only` unless the user asks for a title.
+
+### Automatic Module Matching And Free Mixing
+
+The six core style modules can be combined freely, and the assistant should not wait for the user to specify the exact combination. When a user uploads a portrait or asks for style generation, first analyze the person's visual profile, then automatically choose the most suitable module combination and style linkage. User-specified combinations such as `发型+服装`, `眼镜+发型`, `色彩+妆容+衣品`, or `四季穿搭+发型` override the automatic selection; otherwise, select the combination proactively.
+
+Automatic matching rules:
+
+- Start from the person's face shape, feature weight, brow-eye presence, hairline/bangs, skin tone, contrast level, body proportion, clothing baseline, scene, age impression, and temperament.
+- Decide which modules are most useful for this person and how strongly each module should influence the result. For example, a soft literary rainy-cafe portrait may prioritize hair + outfit + palette + natural makeup, with eyewear as an optional accent.
+- Create one unified style direction first, then let the selected modules support each other. Hairstyle color should match the personal color palette; clothing silhouette should match the facial temperament; glasses should match both face shape and outfit mood; makeup should support the hair and outfit rather than becoming a separate beauty template.
+- Do not simply paste multiple full report templates together. Merge overlapping sections and keep the image clean, with fewer but stronger modules.
+- If generating a combined image, use one main Before/After or one hero portrait plus compact supporting modules, depending on the selected combination.
+- If the user asks for `all` or a full suite, generate a main overview plus separate detail images. If the user asks for a custom combination, generate only that combination. If the user gives no combination, automatically choose the best combination from the uploaded image.
+- Always prioritize likeness to the uploaded person over generic style similarity.
+
+
 Identity preservation requirements:
 
 - Keep facial recognizability, age impression, face shape, core features, skin texture, expression temperament, and body proportions.
@@ -50,7 +78,7 @@ Identity preservation requirements:
 
 ## Workflow
 
-1. Identify the report type from the user's request.
+1. Identify the report type from the user's request. If the user does not specify exact modules, automatically infer the best module combination from the uploaded image and style goal.
 2. If the user uploaded an image, treat it as Image A and the primary identity reference.
 3. If the user did not upload an image, ask for a portrait/body photo unless they only want a generic reusable prompt.
 4. If the user asks for automatic matching, full suite, all photos, all reports, or `自动匹配风格`, run the Auto Full Style Suite workflow instead of choosing only one template.
@@ -74,7 +102,7 @@ Use this workflow when the user uploads one photo and wants everything generated
 
 Choose the mode from the user's intent:
 
-1. `单图五合一总览图` — one horizontal overview image containing five modules on the same canvas: eyewear, hairstyle, outfit, color palette, and facial/makeup detail guide. Use this when the user wants everything in one image or complains that modules are separate.
+1. `单图多合一总览图` — one horizontal overview image containing the requested modules on the same canvas. For a full suite, include six modules: eyewear, hairstyle, outfit, seasonal outfits, color palette, and facial/makeup detail guide. For a custom mix, include only the requested modules. Use this when the user wants everything in one image or complains that modules are separate.
 2. `强参考本人模式` — direct image generation with the uploaded photo passed as `reference_image` when the image tool supports it. Use this whenever likeness matters. If the tool surface does not expose `reference_image`, state the limitation and avoid promising exact likeness.
 
 For direct generation with a reference photo, call:
@@ -228,6 +256,9 @@ Output goal:
 Must emphasize:
 
 - Korean light streetwear, clean fit, city boy, urban casual, Japanese minimal streetwear, relaxed Hong Kong style, and daily wearable trendiness.
+- Auto-match outfits from facial features, face shape, feature weight, temperament, body proportions, and real application scenes.
+- Choose one main style plus 2-3 supporting styles from a broad style library (Sweet, Princess, Soft Feminine, Girlish, Korean Chic, French Chic, Japanese Casual Elegant, Light Mature, Office Chic, Professional, Intellectual, Minimalist, Quiet Luxury, Vintage, Hong Kong Retro, Punk, Street Style, Functional Utility, Cool Edgy, Androgynous, Artistic, Natural Soft, Relaxed Effortless, Modern Luxury, Elegant Lady, Resort Style, American Casual, Old Money, Y2K, Clean Fit, Athflow, New Chinese Style).
+- Tie each recommended look to a concrete application scene such as daily street, date/photos, commute, friends, campus, light formal, travel, cafe/exhibition, nightlife, or city street photography.
 - After should be more stylish, sharper, more confident, and more photogenic.
 - Avoid making After old-fashioned, overly businesslike, or like insurance-sales attire.
 
