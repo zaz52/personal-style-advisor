@@ -104,10 +104,11 @@ personal-style-advisor/
 ## How To Use With Image Generation
 
 1. Upload a clear portrait or full-body photo.
-2. Tell Hermes whether you want one report type or the Auto Full Style Suite.
-3. Add preferences such as gender expression, style direction, occasion, budget, or avoid list.
-4. Ask Hermes to generate the image directly or first produce the image-generation prompt.
-5. For the full suite, generate in batches: eyewear + hairstyle first, then outfit, color pages, seasonal outfits, and facial aesthetics.
+2. First generate the master-and-modules overview when the user wants a compact cover image.
+3. After the overview is approved, generate each module as its own detail image: eyewear, hairstyle, outfit, color, and facial atmosphere.
+4. Add preferences such as gender expression, style direction, occasion, budget, or avoid list.
+5. Ask Hermes to generate the image directly or first produce the image-generation prompt.
+6. For the full suite, generate in batches: overview first, then eyewear + hairstyle, then outfit, color pages, seasonal outfits, and facial aesthetics.
 
 Recommended wording:
 

@@ -109,7 +109,19 @@ Each module represents one report section from this skill. Use short readable Ch
 Visual style: clean cream background, soft accent colors, magazine layout, premium personal consulting board, not a dense PPT table. Avoid overcrowding, face replacement, plastic skin, aggressive slimming, medical claims, excessive beautification, and unreadable long paragraphs.
 ```
 
-This mode is a compact overview. For professional detail, generate the full suite as separate report images after the user approves the overview.
+This mode is a compact overview. After the user approves the overview, generate each module as its own full detail image using the same reference photo and the corresponding skill report layout.
+
+### Detail Images After Overview
+
+When the overview layout is approved, the next step is not another overview. Generate one separate detail image per module, each with `reference_image=<same uploaded image path>`:
+
+1. `眼镜适配详情图` — horizontal 4:3, based on Eyewear Style Matching layout.
+2. `发型升级详情图` — horizontal 4:3, based on Hairstyle Upgrade Report layout.
+3. `衣品升级详情图` — horizontal 4:3, based on Outfit Upgrade Report layout.
+4. `色彩诊断详情图` — vertical 3:4 pages, based on Personal Color Diagnosis layout. If the user asks for a compact set, create one vertical 3:4 summary page first; otherwise create three separate pages.
+5. `五官氛围详情图` — horizontal 4:3, based on Facial Aesthetic Upgrade Report layout.
+
+Important sequencing rule: the overview image is only the cover/summary. The detail images must be generated separately, one prompt per image, using the detailed report layout for that module. Do not assume the overview replaces the detail images.
 
 ### What To Produce
 
