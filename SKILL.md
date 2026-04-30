@@ -1,6 +1,6 @@
 ---
 name: personal-style-advisor
-description: Use when generating personal style consulting reports from user photos or style goals, including eyewear matching, Korean streetwear seasonal looks, outfit upgrades, personal color diagnosis, hairstyle upgrades, makeup/detail guidance, and facial aesthetic proposal boards.
+description: Use when generating personal style consulting reports from user photos or style goals, including eyewear matching, Korean streetwear seasonal looks, outfit upgrades, personal color diagnosis, hairstyle upgrades, makeup/detail guidance, facial aesthetic proposal boards, personal portrait photography, pose/action reference sheets, and accessories/product styling.
 version: 1.0.0
 author: 唯一 + Hermes Agent
 license: MIT
@@ -18,6 +18,126 @@ This skill turns a user's portrait, body photo, or style request into a high-com
 
 Use it as a prompt framework library. The main job is to choose the right report type, preserve the user's identity, adapt the language to the user's goal, and produce a clean prompt or report structure that an image-generation model can follow.
 
+## GPT-Image2 Structured Prompt Protocol
+
+`awesome-gpt-image-2` is stronger than this skill in one area: it treats prompts as reusable visual protocols instead of loose descriptive text. When adapting any report template, use this structured order before writing the final prompt:
+
+1. `Task / Output Type` — exact deliverable, aspect ratio, image count, and whether it is a single report, detail page, comparison matrix, campaign board, or try-on grid.
+2. `Input Variables` — reference image, user goal, optional brand/product/style preference, must-keep identity anchors, and allowed change scope.
+3. `Analysis Layer` — face shape, feature weight, skin undertone, contrast, hair density/texture, body proportion, temperament, and scene need. Analyze first; do not jump straight to styling.
+4. `Layout Contract` — lock the canvas structure: hero area percentage, number of modules/cards, Before/After placement, grid size, top/middle/bottom zones, margin and spacing rules.
+5. `Visual System` — background, palette, typography mood, line/icon style, shadows, material, photography/lens/light direction, brand accents if any.
+6. `Content Contract` — exact short labels to show, recommended option count, avoid option count, and which text must stay readable. Use short labels, not paragraphs.
+7. `Consistency Rules` — same face, same proportions, same lighting family, same clothing unless outfit is the target, one unified style direction across all modules.
+8. `Negative Constraints` — what not to generate: generic influencer face, cluttered PPT table, unreadable text, excessive cards, face replacement, plastic skin, medical promises, humiliating avoid examples.
+
+Prefer this protocol when the user wants stable, reusable, or batch generation. It improves controllability, especially for report boards with many labels.
+
+## Visual Layout Control Rules
+
+Borrow these production rules from high-performing GPT-Image2 prompts:
+
+- Structure beats style words. Always lock layout, module count, hero image size, and text density before adding aesthetic adjectives.
+- For information reports, use 3-5 major modules by default. More modules require either a larger canvas or separate detail pages.
+- If text must appear, hard-code only short titles, option names, color labels, and 1-line notes. Ask for `clear readable Chinese labels` and forbid gibberish.
+- Use hierarchy instead of equal grids: one hero portrait or Before/After pair must dominate; supporting modules should be smaller.
+- Use brand or style accents only as 5-10% fine details: thin lines, small icons, section tags, swatches, dividers, or small labels. Do not flood the canvas with brand colors.
+- For premium beauty/fashion reports, avoid thick borders, heavy rounded cards, dense PPT tables, and too many decorative stickers.
+- For realistic portrait outputs, include lens/light realism when useful: 50mm or 85mm portrait feel, soft side light, unified shadows, real skin texture, subtle film/editorial grain.
+- For series images, repeat the same visual system, spacing, typography mood, and identity anchors across every page.
+
+## New Optional Modules From GPT-Image2 Review
+
+The external repo highlights several useful gaps in this skill. Add these only when relevant; do not force them into every report.
+
+- `awesome-gpt-image-2/docs/gallery-part-2.md#case-348` → beard/grooming analysis.
+- `awesome-gpt-image-2/docs/gallery-part-2.md#case-349`, `#case-351`, `#case-356`, `#case-359` → sports/fashion/editorial campaign posters.
+- `awesome-gpt-image-2/docs/gallery-part-2.md#case-353` → lipstick/product recommendation report.
+- `awesome-gpt-image-2/docs/gallery-part-2.md#case-357` and `awesome-gpt-image-2/docs/templates.md#tpl-photo` → personal portrait photography.
+- `awesome-gpt-image-2/docs/gallery-part-2.md#case-347` and `awesome-gpt-image-2/docs/templates.md` action reference section → pose/action reference sheets.
+- `awesome-gpt-image-2/docs/templates.md` product/e-commerce and brand sections → accessories/product styling and brand-aware beauty/product boards.
+
+### Personal Portrait Photography / Lifestyle Shot
+
+Use when the user asks for a realistic personal photo, cafe portrait, mirror/fisheye shot, dating profile photo, street snapshot, or `帮我生成一张像真实拍摄的照片`.
+
+Output goal:
+
+- One realistic finished portrait, usually 3:4, 4:5, or 9:16.
+- Use the uploaded reference as the primary identity source.
+- Choose a specific lens, camera distance, location, light, outfit baseline, pose, and image texture.
+- Preserve face, age impression, body proportion, and temperament; only improve styling and photographic presentation if requested.
+
+Strict rules: no generic influencer face, no plastic skin, no extreme beauty retouching, no identity-changing body/face edits. Use realistic lens/lighting language such as 35mm, 50mm, 85mm, direct flash, soft window light, film grain, or mirror/fisheye only when they fit the scene.
+
+### Pose / Action Reference Sheet
+
+Use when the user asks for pose guidance, body posture, action sequence, dance/sport movement, photo pose cards, or `动作分解`.
+
+Output goal:
+
+- A clean technical reference sheet, usually 4x4 or 3x3 grid.
+- Same person or same character across every panel.
+- Each panel shows one full-body pose with a short title, direction arrows, and optional 1-line note.
+- Useful for teaching photo poses, athletic form, dance movements, runway/posture practice, or animation references.
+
+Strict rules: keep the same face, hair, outfit, body proportion, and rendering style across panels. Do not add extra characters, complex backgrounds, or long unreadable text. Avoid unsafe fitness claims; movement diagrams are visual references, not medical/training prescriptions.
+
+### Accessories / Product Styling Board
+
+Use when the user asks for bag, shoes, jewelry, watch, perfume, nails, skincare, fragrance, accessories, shopping shortlist, product-matching, or `配饰推荐`.
+
+Output goal:
+
+- One product-aware personal styling board, usually 4:3, 3:4, or square.
+- Analyze the user's face/style/color profile first, then recommend 3-6 products or accessory directions.
+- Show product close-ups, material/color swatches, use scenes, and how each item changes the person's styling mood.
+- Can be brand-aware if the user supplies a brand, but brand accents should be subtle and no fake logos unless supplied.
+
+Strict rules: recommendations should complement the person's existing features and outfit direction, not overpower them. Keep product labels short, avoid fake official claims, and preserve identity when showing try-on or worn examples.
+
+### Lipstick / Makeup Product Recommendation Report
+
+Use when the user asks for lipstick shades, makeup product recommendations, brand-specific beauty shopping, or `口红推荐`.
+
+Output goal:
+
+- One vertical 9:16 or 3:4 premium beauty infographic.
+- User selfie/portrait as identity reference.
+- Analysis area: skin undertone, brightness, temperament, lip base color, makeup state.
+- Try-on matrix: 3-5 options using the same face, only lip color changes.
+- Each option includes shade name/number, color family, effect, and scene.
+- Brand visual layer: Dior = soft French gray/silver; YSL = black/gold high contrast; Armani = muted matte gray; Chanel = strict black/white minimal; Tom Ford = dark cinematic luxury.
+
+Strict rules: same face across all swatches, real skin texture, precise lip color, unified light, brand accents as thin lines/small tags only, no fake logos unless supplied, no over-retouching.
+
+### Beard / Grooming Analysis Report
+
+Use when the user asks for beard, moustache, shaving, male grooming, jawline styling, or `胡须风格分析`.
+
+Output goal:
+
+- One premium grooming infographic, usually horizontal 4:3 or square 1:1.
+- Show front and optional side profile references of the same person.
+- Analyze face shape, beard density, jawline definition, growth pattern, skin visibility, and daily maintenance difficulty.
+- Compare options such as clean shave, stubble, short boxed beard, goatee, Van Dyke, and fuller beard when appropriate.
+- Include suitability scores or simple suitable / try / avoid labels.
+
+Strict rules: keep the same man, same face, same age impression, same hairline; only facial hair changes. Do not masculinize by changing bone structure, do not add fake jaw surgery, and do not make avoid examples humiliating.
+
+### Fashion Campaign / Editorial Poster Mode
+
+Use when the user wants a shareable fashion poster instead of a consulting report, such as `做成杂志封面`, `运动时尚大片`, `水墨双重曝光`, or `高级个人海报`.
+
+Output goal:
+
+- One poster/campaign image, not a diagnosis board.
+- Lock a strong composition first: single hero shot, 3-panel campaign, typography poster, or double-exposure portrait.
+- Use the person's identity as the hero visual, then add styling, typography, symbolic environment, or campaign props.
+- Keep text minimal and exact. If using big typography, specify exact words and require correct spelling.
+
+Strict rules: do not accidentally turn a report request into a poster; only use this mode when the user asks for editorial/campaign output. Avoid copied brand logos and avoid unrelated decorative text.
+
 ## When to Use
 
 Use this skill when the user asks for any of these:
@@ -28,6 +148,9 @@ Use this skill when the user asks for any of these:
 - Personal color diagnosis, seasonal color analysis, makeup colors, hair colors, and accessory color guidance.
 - Hairstyle upgrade, haircut recommendation, bangs, volume, layers, hair color, or hair aesthetic report.
 - Facial aesthetic upgrade report focusing on brows, eyes, nose, contour, lips, skin texture, or natural enhancement.
+- Personal portrait photography, lifestyle photos, mirror/fisheye shots, dating profile photos, or realistic editorial portraits.
+- Pose/action reference sheets, photo pose cards, movement sequence diagrams, or posture guides.
+- Accessories and product styling: bags, shoes, jewelry, watches, perfume, nails, skincare, fragrance, and shopping/product match boards.
 - Xiaohongshu-style image consulting cards, fashion report boards, or high-information visual prompt packs.
 
 Do not use this skill for:
@@ -92,6 +215,9 @@ Identity preservation requirements:
    - Facial aesthetic report: horizontal 4:3.
    - Seasonal Korean streetwear: four separate vertical 3:4 images.
    - Personal color diagnosis: three separate vertical 3:4 images.
+   - Accessories/product styling board: 4:3 horizontal, 3:4 vertical, or square depending on use.
+   - Personal portrait photography: 3:4, 4:5, or 9:16 depending on platform.
+   - Pose/action reference sheet: square or horizontal 4:3 grid.
    - Auto Full Style Suite: multiple separate outputs, never one overcrowded mega-collage.
 
 ## Auto Full Style Suite
@@ -310,6 +436,31 @@ Must emphasize:
 - Analyze brows, eyes, nose, facial contour, lips/mouth area, and skin texture.
 - Avoid medical promises and avoid overdone double eyelids, aggressive canthoplasty, high fake nose bridge, sharp V-face, overfilled lips, or plastic-skin smoothing.
 
+
+### Personal Portrait Photography / Lifestyle Shot
+
+Use `references/personal-portrait-photography.md` when the user asks for a realistic personal portrait, lifestyle photo, cafe shot, mirror/fisheye image, street snapshot, dating profile image, or realistic photo-style transformation. This is not a report layout; it is one finished photograph with strong identity preservation.
+
+### Pose / Action Reference Sheet
+
+Use `references/pose-action-reference-sheet.md` when the user asks for photo poses, body posture, dance/sport action steps, full-body pose grids, runway/posture practice, or action breakdowns. Lock the grid and keep the same person across every panel.
+
+### Accessories / Product Styling Board
+
+Use `references/accessories-product-styling-board.md` when the user asks for bags, shoes, jewelry, watches, perfume, nails, skincare, fragrance, accessory matching, product recommendations, or shopping/product style boards. Analyze the person first, then map products to style role, color/material, and usage scene.
+
+### Lipstick / Makeup Recommendation Report
+
+Use the `Lipstick / Makeup Product Recommendation Report` module when the user asks for lipstick, makeup color, specific beauty brands, product shopping, or try-on matrices. This can be combined with Personal Color Diagnosis, but it is more product-specific: it should map undertone + temperament + lip base color to 3-5 differentiated options and show a same-face try-on matrix.
+
+### Beard / Grooming Analysis Report
+
+Use the `Beard / Grooming Analysis Report` module when the user asks about beard, moustache, shaving, jawline grooming, or male facial-hair styling. This fills a gap not covered by hairstyle or facial aesthetic reports. Keep changes limited to facial hair and grooming, not bone structure.
+
+### Editorial / Campaign Poster Mode
+
+Use the `Fashion Campaign / Editorial Poster Mode` only when the user wants a shareable poster, magazine cover, campaign visual, or artistic portrait rather than a consulting report. Lock the composition type first: single hero poster, 3-panel campaign, typography-led poster, or double-exposure portrait.
+
 ## Output Modes
 
 ### Prompt Mode
@@ -374,6 +525,15 @@ When the user wants written advice instead of images, output:
 5. Using a single fixed beauty standard. Preserve personal temperament and provide multiple viable routes.
 6. Making Avoid examples humiliating. Avoid sections should be realistic and lightly instructive, not mocking.
 7. Defaulting every color analysis to warm, soft, or milk-tea palettes. Diagnose first, then recommend.
+
+
+8. Starting with adjectives instead of a layout contract. For complex report images, first specify canvas structure, module count, and text rules.
+9. Letting brand style dominate the report. Brand cues should be thin-line accents, not full-screen color blocks or fake logos.
+10. Making try-on matrices inconsistent. Lipstick, beard, hair, and outfit option grids must keep the same face and only change the target variable.
+
+11. Treating a realistic portrait request like a report. If the user wants a photo, do not add cards, labels, or consulting modules.
+12. For pose/action grids, failing to lock the grid structure and same-person consistency.
+13. For accessories/product boards, letting products overpower the person instead of supporting the style direction.
 
 ## Verification Checklist
 
