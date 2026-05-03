@@ -33,6 +33,7 @@ The goal is not to collect loose beauty prompts. This skill turns personal style
 - **个人色彩诊断三连图** — personal color diagnosis, color draping, outfit application, makeup, hair, and detail guide.
 - **AI 发型美学升级报告** — hairstyle upgrade report with best cuts and avoid examples.
 - **AI 五官美学升级报告** — natural facial aesthetic proposal board with cautious, non-medical guidance.
+- **Q版分身手账照 / Chibi Sticker Diary Photo** — keep the real photo as the main subject, then add same-person chibi sticker avatars, scrapbook doodles, and handwritten diary notes.
 - **Auto Personal Style Suite** — upload one photo and automatically create a matched full styling plan across eyewear, outfits, colors, hairstyle, and facial aesthetics.
 
 ### New GPT-Image2-Inspired Modules
@@ -86,6 +87,7 @@ personal-style-advisor/
     lipstick-makeup-recommendation.md
     beard-grooming-analysis.md
     editorial-campaign-poster.md
+    chibi-sticker-diary-photo.md
 ```
 
 ## Install In Hermes
@@ -197,6 +199,14 @@ Restart Hermes or start a new session, then ask Hermes to use the skill:
 
 ```text
 使用 personal-style-advisor。请基于我上传的正面照片，生成一张横向 4:3 的 AI 发型美学升级报告。只改变发型，不改变五官、穿搭和妆容。
+```
+
+### Chibi Sticker Diary Photo
+
+```text
+使用 personal-style-advisor。我会上传一张真人生活照片。请使用 references/chibi-sticker-diary-photo.md，生成一张「Q版分身手账照 / Chibi Sticker Diary Photo」。
+
+要求保留原图真人主体、脸部特征、发型、服装、姿势、光线和真实场景，不要把真人变成插画。请自动判断照片主题，并在人物四周加入 5-8 个像本人的 Q版迷你分身贴纸、手账涂鸦和 5-8 句简短手写风文案。整体要可爱、干净、有贴纸融合感，不遮挡主体。
 ```
 
 ## How To Use With Image Generation

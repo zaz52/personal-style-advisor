@@ -1,6 +1,6 @@
 ---
 name: personal-style-advisor
-description: Use when generating personal style consulting reports from user photos or style goals, including eyewear matching, Korean streetwear seasonal looks, outfit upgrades, personal color diagnosis, hairstyle upgrades, makeup/detail guidance, facial aesthetic proposal boards, personal portrait photography, pose/action reference sheets, and accessories/product styling.
+description: Use when generating personal style consulting reports from user photos or style goals, including eyewear matching, Korean streetwear seasonal looks, outfit upgrades, personal color diagnosis, hairstyle upgrades, makeup/detail guidance, facial aesthetic proposal boards, personal portrait photography, chibi sticker diary photo enhancements, pose/action reference sheets, and accessories/product styling.
 version: 1.0.0
 author: 唯一 + Hermes Agent
 license: MIT
@@ -151,7 +151,8 @@ Use this skill when the user asks for any of these:
 - Personal portrait photography, lifestyle photos, mirror/fisheye shots, dating profile photos, or realistic editorial portraits.
 - Pose/action reference sheets, photo pose cards, movement sequence diagrams, or posture guides.
 - Accessories and product styling: bags, shoes, jewelry, watches, perfume, nails, skincare, fragrance, and shopping/product match boards.
-- Xiaohongshu-style image consulting cards, fashion report boards, or high-information visual prompt packs.
+- Q版分身手账照 / Chibi Sticker Diary Photo, keeping the real photo as the main subject while adding cute same-person chibi stickers, doodles, and handwritten diary notes.
+- Xiaohongshu-style image consulting cards, fashion report boards, lifestyle diary photos, or high-information visual prompt packs.
 
 Do not use this skill for:
 
@@ -205,10 +206,11 @@ Identity preservation requirements:
 2. If the user uploaded an image, treat it as Image A and the primary identity reference.
 3. If the user did not upload an image, ask for a portrait/body photo unless they only want a generic reusable prompt.
 4. If the user asks for automatic matching, full suite, all photos, all reports, or `自动匹配风格`, run the Auto Full Style Suite workflow instead of choosing only one template.
-5. Select the closest reference template from `references/`.
-6. Adapt the template to the user's gender expression, age impression, body type, lifestyle, scene, and style preference.
-7. Keep the final prompt specific, structured, and image-model friendly.
-8. If generating an image, request the proper aspect ratio:
+5. If the user asks for `Q版分身手账照`, `Chibi Sticker Diary Photo`, `Q版小人贴纸`, or `手账涂鸦照片`, use `references/chibi-sticker-diary-photo.md` instead of a consulting report template.
+6. Select the closest reference template from `references/`.
+7. Adapt the template to the user's gender expression, age impression, body type, lifestyle, scene, and style preference.
+8. Keep the final prompt specific, structured, and image-model friendly.
+9. If generating an image, request the proper aspect ratio:
    - Eyewear report: horizontal 4:3.
    - Outfit upgrade report: horizontal 4:3.
    - Hairstyle report: horizontal 4:3.
@@ -218,6 +220,7 @@ Identity preservation requirements:
    - Accessories/product styling board: 4:3 horizontal, 3:4 vertical, or square depending on use.
    - Personal portrait photography: 3:4, 4:5, or 9:16 depending on platform.
    - Pose/action reference sheet: square or horizontal 4:3 grid.
+   - Chibi Sticker Diary Photo: preserve original ratio, 4:5, 3:4, 9:16, or square depending on platform.
    - Auto Full Style Suite: multiple separate outputs, never one overcrowded mega-collage.
 
 ## Auto Full Style Suite
@@ -459,7 +462,25 @@ Use the `Beard / Grooming Analysis Report` module when the user asks about beard
 
 ### Editorial / Campaign Poster Mode
 
-Use the `Fashion Campaign / Editorial Poster Mode` only when the user wants a shareable poster, magazine cover, campaign visual, or artistic portrait rather than a consulting report. Lock the composition type first: single hero poster, 3-panel campaign, typography-led poster, or double-exposure portrait.
+Use the `Fashion Campaign / Editorial Poster Mode` only when the user wants a shareable fashion poster instead of a consulting report, such as `做成杂志封面`, `运动时尚大片`, `水墨双重曝光`, or `高级个人海报`. Lock the composition type first: single hero poster, 3-panel campaign, typography-led poster, or double-exposure portrait.
+
+### Chibi Sticker Diary Photo
+
+Use `references/chibi-sticker-diary-photo.md` when the user asks for `Q版分身手账照`, `Chibi Sticker Diary Photo`, `Q版小人贴纸`, `手账涂鸦照片`, or a cute lifestyle diary photo based on a real uploaded image.
+
+Output goal:
+
+- One realistic photo enhancement, not a consulting report.
+- Keep the uploaded real photo as the hero image: same person, face, hairstyle, clothing, pose, lighting, and scene.
+- Add 5-8 cute same-person chibi mini versions as sticker-like avatars around the subject.
+- Add scrapbook doodles and 5-8 short handwritten notes that match the photo's actual life theme.
+
+Must emphasize:
+
+- The chibi stickers must look like mini versions of the same person, preserving hair, clothing colors, accessories, and temperament.
+- The model should automatically infer the theme from the photo: work, commute, selfie, outfit, cafe, food, home, travel, fitness, study, or another real context.
+- Do not cover the main face/body, do not overcrowd the image, do not change identity, and do not turn the real subject into a full illustration.
+- If readable Chinese handwriting is unreliable, reduce the amount of text and use shorter labels.
 
 ## Output Modes
 
@@ -525,15 +546,14 @@ When the user wants written advice instead of images, output:
 5. Using a single fixed beauty standard. Preserve personal temperament and provide multiple viable routes.
 6. Making Avoid examples humiliating. Avoid sections should be realistic and lightly instructive, not mocking.
 7. Defaulting every color analysis to warm, soft, or milk-tea palettes. Diagnose first, then recommend.
-
-
 8. Starting with adjectives instead of a layout contract. For complex report images, first specify canvas structure, module count, and text rules.
 9. Letting brand style dominate the report. Brand cues should be thin-line accents, not full-screen color blocks or fake logos.
 10. Making try-on matrices inconsistent. Lipstick, beard, hair, and outfit option grids must keep the same face and only change the target variable.
-
 11. Treating a realistic portrait request like a report. If the user wants a photo, do not add cards, labels, or consulting modules.
 12. For pose/action grids, failing to lock the grid structure and same-person consistency.
 13. For accessories/product boards, letting products overpower the person instead of supporting the style direction.
+14. For Q版分身手账照, turning the original real person into a full illustration instead of keeping the real photo as the hero image.
+15. For Q版分身手账照, making the chibi avatars look like unrelated generic characters or covering the user's face/body.
 
 ## Verification Checklist
 
